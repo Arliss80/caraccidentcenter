@@ -1,0 +1,3 @@
+// About Section
+  about_title: "Finding the Right Help Shouldn't Be Another Accident",
+  about_description: "After an accident, finding experienced medical providers and attorneys can be overwhelming. Many doctors lack specific auto accident expertise, while countless attorneys claim to be specialists. For 15 years, we've carefully vetted Utah's top accident-focused providers, ensuring you get proven experts who understand the complexities of accident cases, insurance requirements, and proper documentation. Don't risk your recovery or compensation - let us connect you with the right professionals from day one.",

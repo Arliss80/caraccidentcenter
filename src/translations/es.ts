@@ -1,0 +1,3 @@
+// About Section
+  about_title: "Encontrar la Ayuda Correcta No Debería Ser Otro Accidente",
+  about_description: "Después de un accidente, encontrar proveedores médicos y abogados con experiencia puede ser abrumador. Muchos médicos carecen de experiencia específica en accidentes automovilísticos, mientras que innumerables abogados dicen ser especialistas. Durante 15 años, hemos evaluado cuidadosamente a los mejores proveedores de Utah especializados en accidentes, asegurando que reciba expertos probados que entienden las complejidades de los casos de accidentes, requisitos de seguros y documentación adecuada. No arriesgue su recuperación o compensación - permítanos conectarlo con los profesionales correctos desde el primer día.",
