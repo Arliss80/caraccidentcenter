@@ -10,7 +10,15 @@
   }
   
   body {
-    @apply bg-white text-gray-900 font-sans;
+    @apply bg-white text-gray-900 font-sans selection:bg-blue-600/10 selection:text-blue-600;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  ::selection {
+    @apply bg-blue-600/10 text-blue-600;
   }
 }
 
@@ -20,8 +28,74 @@
   }
   
   .section-padding {
-    @apply py-12 md:py-16; /* Reduced from py-24 md:py-32 */
+    @apply py-12 md:py-24;
   }
+
+  .glass-morphism {
+    @apply backdrop-blur-lg bg-white/80 supports-[backdrop-filter]:bg-white/60;
+  }
+
+  .premium-card {
+    @apply relative overflow-hidden rounded-2xl bg-gradient-to-b from-white to-gray-50/50 p-8 shadow-xl ring-1 ring-gray-900/5 transition duration-300 hover:shadow-2xl;
+  }
+
+  .premium-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 transition-opacity duration-300;
+  }
+
+  .premium-card:hover::before {
+    @apply opacity-5;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: white;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    @apply rounded-[inherit] bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+
+  .animated-gradient {
+    background: linear-gradient(-45deg, #3b82f6, #6366f1, #8b5cf6, #3b82f6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  /* Mobile-first responsive classes */
+  .mobile-menu {
+    @apply fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out;
+  }
+
+  .mobile-menu.open {
+    @apply translate-x-0;
+  }
+
+  .mobile-menu.closed {
+    @apply translate-x-full;
+  }
+
+  /* Touch-friendly buttons */
+  .touch-button {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+
+  /* Improved tap targets for mobile */
+  .mobile-tap-target {
+    @apply p-4 touch-button;
+  }
+}
+
+/* Animations */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .fade-in {
@@ -33,12 +107,8 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -49,5 +119,58 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500/50 rounded-full hover:bg-blue-600/50 transition-colors;
+}
+
+/* Mobile-first media queries */
+@media (max-width: 640px) {
+  .container-padding {
+    @apply px-4;
+  }
+
+  .section-padding {
+    @apply py-8 md:py-16;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  .mobile-spacing {
+    @apply space-y-6;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

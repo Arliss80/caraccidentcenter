@@ -4,7 +4,6 @@ export type TranslationType = {
     subtitle: string;
     cta: string;
     learnMore: string;
-    emergencySupport: string;
   };
   about: {
     badge: string;
@@ -118,8 +117,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
       title: "Recover with Confidence - Your Partner After an Accident",
       subtitle: "We help you navigate medical, legal, and insurance challenges after a car accident.",
       cta: "Get Free Consultation",
-      learnMore: "Learn More",
-      emergencySupport: "24/7 Emergency Support Available"
+      learnMore: "Learn More"
     },
     about: {
       badge: "15+ Years Experience",
@@ -135,7 +133,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
           description: "1000+ cases successfully handled"
         },
         support: {
-          title: "24/7 Support",
+          title: "Dedicated Support",
           description: "Always here when you need us"
         }
       }
@@ -228,7 +226,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
     },
     contact: {
       title: "Get Help Now",
-      description: "Our team is available 24/7 to assist you with your recovery journey.",
+      description: "Our team is ready to assist you with your recovery journey.",
       form: {
         name: "Full Name",
         phone: "Phone Number",
@@ -248,7 +246,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
         },
         hours: {
           title: "Hours",
-          value: "24/7 Support"
+          value: "Available Now"
         }
       }
     },
@@ -272,8 +270,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
       title: "Recupérese con Confianza - Su Socio Después de un Accidente",
       subtitle: "Le ayudamos a navegar los desafíos médicos, legales y de seguros después de un accidente automovilístico.",
       cta: "Obtener Consulta Gratuita",
-      learnMore: "Más Información",
-      emergencySupport: "Soporte de Emergencia 24/7 Disponible"
+      learnMore: "Más Información"
     },
     about: {
       badge: "15+ Años de Experiencia",
@@ -289,7 +286,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
           description: "Más de 1000 casos manejados con éxito"
         },
         support: {
-          title: "Soporte 24/7",
+          title: "Soporte Dedicado",
           description: "Siempre aquí cuando nos necesite"
         }
       }
@@ -382,7 +379,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
     },
     contact: {
       title: "Obtenga Ayuda Ahora",
-      description: "Nuestro equipo está disponible 24/7 para ayudarle en su proceso de recuperación.",
+      description: "Nuestro equipo está listo para ayudarle en su proceso de recuperación.",
       form: {
         name: "Nombre Completo",
         phone: "Número de Teléfono",
@@ -402,7 +399,7 @@ const translations: Record<'en' | 'es', TranslationType> = {
         },
         hours: {
           title: "Horario",
-          value: "Soporte 24/7"
+          value: "Disponible Ahora"
         }
       }
     },

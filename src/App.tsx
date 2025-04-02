@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout';
 import MedicalNetwork from './pages/MedicalNetwork';
 import AttorneyNetwork from './pages/AttorneyNetwork';
 import MedicalServiceDetail from './pages/MedicalServiceDetail';
+import LocationPage from './pages/LocationPage';
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from './utils/i18n';
 
 export default function App() {
@@ -28,13 +29,21 @@ export default function App() {
 
   return (
     <Routes>
+      {/* Root redirect */}
+      <Route path="/" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
+
       {/* Language-specific routes */}
-      <Route path="/:lang">
-        <Route index element={<MainLayout />} />
-        <Route path="medical-network" element={<MedicalNetwork />} />
-        <Route path="medical-network/:serviceId" element={<MedicalServiceDetail />} />
-        <Route path="attorney-network" element={<AttorneyNetwork />} />
-      </Route>
+      {SUPPORTED_LANGUAGES.map(lang => (
+        <Route key={lang} path={`/${lang}/*`} element={
+          <Routes>
+            <Route index element={<MainLayout />} />
+            <Route path="medical-network" element={<MedicalNetwork />} />
+            <Route path="medical-network/:serviceId" element={<MedicalServiceDetail />} />
+            <Route path="attorney-network" element={<AttorneyNetwork />} />
+            <Route path=":citySlug-car-accident-help" element={<LocationPage />} />
+          </Routes>
+        } />
+      ))}
 
       {/* Catch-all route */}
       <Route path="*" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
